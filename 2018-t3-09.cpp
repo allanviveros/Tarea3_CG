@@ -8,9 +8,12 @@
 // Numero de Grupo: 9
 
 #include <GL/glut.h>
+#include <iostream>
+using namespace std;
 
 void init();
 void mydisplay();
+void Keys(unsigned char key, int xx, int yy);
 
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
@@ -21,6 +24,8 @@ int main(int argc, char** argv) {
 	glutDisplayFunc(mydisplay);
 
 	init();
+
+	glutKeyboardFunc(Keys);
 
 	glutMainLoop();
 
@@ -60,4 +65,24 @@ void mydisplay()
 	glVertex2f(-0.9, -0.9);
 	glEnd();
 	glFlush();
+}
+
+void Keys(unsigned char key, int xx, int yy) {
+	switch (key) {
+	case 27:
+		exit(0);
+	case 'x':
+		cout << "Estoy apretando x" << endl;
+		break;
+	case 'X':
+		break;
+	case 'y':
+		break;
+	case 'Y':
+		break;
+	case 'z':
+		break;
+	case 'Z':
+		break;
+	}
 }
